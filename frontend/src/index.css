@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@theme {
+  --font-family-inter: 'Inter', sans-serif;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+/* Range Slider Styling */
+input[type=range] {
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid #6366f1;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid #6366f1;
+  cursor: pointer;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+/* Animation for pulsing elements */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.pulse-ring {
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+
+/* Map container fixes */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Custom toast styling */
+.Toastify__toast {
+  border-radius: 12px !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Leaflet popup override for dark theme */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.leaflet-popup-content {
+  margin: 12px 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom marker styles */
+.custom-marker,
+.playback-marker-container,
+.waypoint-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Playback marker animation */
+.playback-marker {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.playback-marker-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.playback-marker-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: rgba(99, 102, 241, 0.4);
+  border-radius: 50%;
+  animation: pulse 1.5s ease-out infinite;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}

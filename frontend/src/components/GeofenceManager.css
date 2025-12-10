@@ -1,0 +1,414 @@
+.geofence-manager {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8ecef;
+  margin-bottom: 1rem;
+}
+
+.geofence-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e8ecef;
+}
+
+.geofence-header h3 {
+  margin: 0;
+  color: #2d3748;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.add-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.add-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+/* Form Styles */
+.geofence-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.geofence-form input[type="text"],
+.geofence-form textarea {
+  padding: 0.65rem 0.85rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.geofence-form input:focus,
+.geofence-form textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.geofence-form textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+/* Map Picker */
+.map-picker-container {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #e2e8f0;
+}
+
+.map-picker-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.map-picker {
+  height: 200px;
+}
+
+.map-picker .leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* Center Marker */
+.geofence-center-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Radius Control */
+.radius-control {
+  background: white;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.radius-control label {
+  display: block;
+  font-size: 0.85rem;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.radius-control label strong {
+  color: #667eea;
+  font-size: 1rem;
+}
+
+.radius-slider {
+  width: 100%;
+  height: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #e2e8f0;
+  border-radius: 4px;
+  outline: none;
+  margin-bottom: 0.75rem;
+}
+
+.radius-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.radius-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.radius-presets {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.radius-presets .preset-btn {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #4a5568;
+}
+
+.radius-presets .preset-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.radius-presets .preset-btn.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+/* Coordinate Inputs */
+.coord-inputs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.coord-row {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.coord-row label {
+  font-size: 0.75rem;
+  color: #718096;
+  font-weight: 500;
+  min-width: 30px;
+}
+
+.coord-row input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  background: white;
+}
+
+.coord-row input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+/* Submit Button */
+.submit-button {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+}
+
+.submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Geofence List */
+.geofence-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.no-geofences {
+  text-align: center;
+  color: #a0aec0;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.geofence-item {
+  background: #f7fafc;
+  border-radius: 10px;
+  padding: 0.85rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.geofence-item:hover {
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+}
+
+.geofence-info {
+  margin-bottom: 0.5rem;
+}
+
+.geofence-info strong {
+  color: #2d3748;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.geofence-details {
+  font-size: 0.8rem;
+  color: #718096;
+}
+
+.geofence-description {
+  font-size: 0.8rem;
+  color: #a0aec0;
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+.geofence-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.geofence-actions button {
+  padding: 0.4rem 0.6rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.assign-button {
+  background: #ebf4ff;
+  color: #667eea;
+}
+
+.assign-button:hover {
+  background: #667eea;
+  color: white;
+}
+
+.edit-button {
+  background: #fef3c7;
+  color: #d69e2e;
+}
+
+.edit-button:hover {
+  background: #ecc94b;
+  color: white;
+}
+
+.delete-button {
+  background: #fed7d7;
+  color: #e53e3e;
+}
+
+.delete-button:hover {
+  background: #fc8181;
+  color: white;
+}
+
+/* User Assignment Panel */
+.user-assignment-panel {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.assignment-header h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.user-name {
+  font-size: 0.85rem;
+  color: #2d3748;
+}
+
+.toggle-assign-btn {
+  padding: 0.35rem 0.65rem;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #718096;
+}
+
+.toggle-assign-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.toggle-assign-btn.assigned {
+  background: #48bb78;
+  color: white;
+  border-color: #48bb78;
+}
+
+.toggle-assign-btn.assigned:hover {
+  background: #38a169;
+}
+
+.no-users {
+  text-align: center;
+  color: #a0aec0;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .coord-inputs {
+    flex-direction: column;
+  }
+
+  .radius-presets {
+    justify-content: center;
+  }
+}
