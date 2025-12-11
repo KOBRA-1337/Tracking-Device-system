@@ -66,7 +66,7 @@ async function checkGeofences(userId, latitude, longitude, currentLocationId) {
     );
 
     if (userGeofences.length === 0) {
-      return;
+      return { isOutOfZone: false };
     }
 
     // Get user's previous location (excluding the current one we just inserted)

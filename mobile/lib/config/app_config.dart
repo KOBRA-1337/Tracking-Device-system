@@ -43,7 +43,7 @@ class AppConfig {
   /// static const String apiBaseUrl = 'https://your-backend-url.com/api';
   /// ```
   /// static const String apiBaseUrl = 'http://25.10.65.46:3000/api/v1';
-  static const String apiBaseUrl = 'http://192.168.100.82:3000/api/v1';
+  static const String apiBaseUrl = 'https://dismountable-nickolas-jaunty.ngrok-free.dev/api/v1';
   
   // ========================================
   // Environment-specific URLs

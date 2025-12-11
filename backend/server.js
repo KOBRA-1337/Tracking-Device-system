@@ -30,7 +30,7 @@ const corsOptions = {
     // Check if origin is in allowed list
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
-    } else if (origin.includes('localhost') || origin.includes('127.0.0.1')) {
+    } else if (origin.includes('localhost') || origin.includes('127.0.0.1') || origin.includes('.vercel.app')) {
       // Allow any localhost origin in development
       callback(null, true);
     } else {
