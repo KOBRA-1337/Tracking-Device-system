@@ -49,7 +49,7 @@ const Sidebar = ({
             socket.disconnect();
             clearInterval(interval);
         };
-    }, []);
+    }, [isAdmin]);
 
     const loadUsers = async () => {
         try {

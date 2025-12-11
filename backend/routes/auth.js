@@ -271,6 +271,7 @@ router.post('/logout', authenticateToken, async (req, res, next) => {
 // Get all users (admin only) - for geofence assignment
 router.get('/users', authenticateToken, async (req, res, next) => {
   try {
+    logger.info('Fetching users list', { userId: req.user.id, role: req.user.role });
     // Check if user is admin
     if (req.user.role !== 'admin') {
       throw new ApiError(403, 'Admin access required');
